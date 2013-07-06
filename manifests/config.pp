@@ -2,4 +2,6 @@
 #
 class jetty::config {
 
+  include jetty
+
 }

@@ -10,6 +10,16 @@ class jetty::service {
     $service_enable = false
   }
 
+  file { '/etc/default/jetty':
+    ensure  => 'present',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    content => template("${module_name}/etc/default/jetty.erb"),
+    require => Class['jetty::package'],
+    notify  => Service['jetty'],
+  }
+
   service { 'jetty':
     ensure     => $service_ensure,
     enable     => $service_enable,

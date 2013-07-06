@@ -1,0 +1,5 @@
+### MANAGED BY PUPPET ###
+
+<% scope.lookupvar('jetty::service_settings').sort.map do |key, value| -%>
+<%= key %>=<%= value %>
+<% end -%>

@@ -5,7 +5,8 @@
 # == Usage
 #
 class jetty (
-  $ensure = 'present',
+  $ensure           = 'present',
+  $service_settings = $jetty::params::service_settings,
 ) inherits jetty::params {
 
   require java
