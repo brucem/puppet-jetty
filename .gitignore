@@ -1,0 +1,8 @@
+.pkg
+.Gemfile.lock
+spec/fixtures/
+.rspec_system
+.bundle
+.librarian
+.tmp
+
