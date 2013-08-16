@@ -1,5 +1,14 @@
 #
 class jetty::params {
+  # ensure
+  $ensure = 'present'
+
+  # autoupgrade
+  $autoupgrade = false
+
+  # status
+  $status = 'enabled'
+
   case $::osfamily {
     'Debian': {
       $packages  = ['jetty', 'libjetty-extra']

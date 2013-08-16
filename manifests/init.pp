@@ -5,8 +5,11 @@
 # == Usage
 #
 class jetty (
-  $ensure           = 'present',
+  $ensure           = $jetty::params::ensure,
+  $autoupgrade      = $jetty::params::autoupgrade,
+  $status           = $jetty::params::status,
   $service_settings = $jetty::params::service_settings,
+  $version          = false,
 ) inherits jetty::params {
 
   require java
